@@ -129,19 +129,32 @@ console.log(nomi)
 
 const personaggiFemminili = []
 
-if (starWarsCharacters[i].gender === "female") {
-	nomi.push(starWarsCharacters[i].name)
+for (let i = 0; i < starWarsCharacters.length; i++) {
+	if (starWarsCharacters[i].gender === "female") {
+		personaggiFemminili.push({
+		    name: starWarsCharacters[i].name,
+			hair_color: starWarsCharacters[i].hair_color,
+			eye_color: starWarsCharacters[i].eye_color,
+		})
+	}
 }
-console.log(nomi)
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+console.log(personaggiFemminili)
 
 /* ESERCIZIO 3 — Oggetto raggruppamento
    Crea perColoreOcchi con chiavi: blue, yellow, brown, red, blue-gray (con trattino).
    Ognuna con un array vuoto.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const perColoreOcchi = {
+	blue: []
+	yellow: []
+	brown: []
+	Red: []
+	'blue-gray': []
+}
+	console.log(perColoreOcchi);
+
 
 /* ESERCIZIO 4 — Raggruppa per colore degli occhi
    For su starWarsCharacters + switch (character.eye_color).
@@ -149,7 +162,7 @@ console.log(nomi)
    Stampa perColoreOcchi.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+
 
 /* ESERCIZIO 5 — Massa totale dell'equipaggio (while)
    i = 0, massaTotale = 0.
@@ -157,7 +170,15 @@ console.log(nomi)
    Stampa la massa totale.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+let i = 0;
+let massTotale = 0;
+
+while(i < starWarsCharacters.length) {
+	massaTotale += number(starwarsCharacter[i].mass);
+	i++;
+	}
+
+	console.log('Massa totale = ${massaTotale}');
 
 /* ESERCIZIO 6 — Classifica il carico
    Su massaTotale, switch (true) o if/else if:
@@ -168,7 +189,27 @@ console.log(nomi)
    > 1000           → "PERICOLO: sovraccarico"
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+switch (true) {
+	
+	case massaTotale < 500:
+		console.log('carico leggero');
+		break;
+
+		case massaTotale < 700:
+		console.log('carico medio');
+		break;
+
+		case massaTotale < 900:
+		console.log('Attenzione: oltre 700');
+		break;
+
+		case massaTotale < 1000:
+		console.log('carico critico');
+		break;
+
+		case massaTotale >= 1000:
+		console.log('Pericolo: sovraccarico');
+		break;
 
 /* ESERCIZIO 7 — Robotizza i n/a
    For: per ogni personaggio con gender === "n/a", cambialo in "robot".
