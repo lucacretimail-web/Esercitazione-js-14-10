@@ -210,6 +210,7 @@ switch (true) {
 		case massaTotale >= 1000:
 		console.log('Pericolo: sovraccarico');
 		break;
+		}
 
 /* ESERCIZIO 7 — Robotizza i n/a
    For: per ogni personaggio con gender === "n/a", cambialo in "robot".
