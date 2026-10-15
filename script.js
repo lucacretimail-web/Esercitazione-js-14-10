@@ -233,7 +233,18 @@ switch (true) {
    Stampa lunghezza prima e dopo.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+console.log(`Lunghezza nomi prima: ${nomi.length}`);
+for (let i = 0; i < nomi.length; i++) {
+    for (let j = 0; j < personaggiFemminili.length; j++) {
+        if (nomi[i] === personaggiFemminili[j].name) {
+            nomi.splice(i, 1);
+            i--;
+            break;
+        }
+    }
+}
+console.log(`Lunghezza nomi dopo: ${nomi.length}`);
+console.log(nomi);
 
 /* ESERCIZIO 10 — Personaggio casuale
    indice = Math.floor(Math.random() * starWarsCharacters.length)
